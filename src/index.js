@@ -590,8 +590,8 @@ app.get('/logout', (req, res) => {
 
 https
     .createServer({
-        key: fs.readFileSync(path.join(__dirname, '../threads-sample.meta-key.pem')),
-        cert: fs.readFileSync(path.join(__dirname, '../threads-sample.meta.pem')),
+        key: fs.readFileSync(path.join(__dirname, '../jayeshparmar.xyz-key.pem')),
+        cert: fs.readFileSync(path.join(__dirname, '../jayeshparmar.xyz.pem')),
     }, app)
     .listen(PORT, HOST, (err) => {
         if (err) {
