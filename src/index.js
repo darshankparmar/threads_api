@@ -14,6 +14,7 @@ const path = require('path');
 const fs = require('fs');
 const { URLSearchParams, URL } = require('url');
 const multer = require('multer');
+const http = require("http");
 
 const app = express();
 const upload = multer();
@@ -588,12 +589,12 @@ app.get('/logout', (req, res) => {
     }
 });
 
-https
-    .createServer({
-        key: fs.readFileSync(path.join(__dirname, '../jayeshparmar.xyz-key.pem')),
-        cert: fs.readFileSync(path.join(__dirname, '../jayeshparmar.xyz.pem')),
-    }, app)
-    .listen(PORT, HOST, (err) => {
+// https
+//     .createServer({
+//         key: fs.readFileSync(path.join(__dirname, '../jayeshparmar.xyz-key.pem')),
+//         cert: fs.readFileSync(path.join(__dirname, '../jayeshparmar.xyz.pem')),
+//     }, app)
+    http.createServer(app).listen(PORT, HOST, (err) => {
         if (err) {
             console.error(`Error: ${err}`);
         }
